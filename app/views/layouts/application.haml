@@ -1,0 +1,145 @@
+!!!
+/[if lt IE 7] <html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
+/[if IE 7] <html class="lt-ie9 lt-ie8" lang="en">
+/[if IE 8] <html class="lt-ie9" lang="en">
+/ [if gt IE 8]><!
+%html{:lang => "en"}
+  / <![endif]
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width,initial-scale=1.0", :name => "viewport"}/
+    %link{:href => "/assets/plugins/colorpicker/colorpicker.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/custom-plugins/wizard/wizard.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/bootstrap/css/bootstrap.min.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/css/fonts/ptsans/stylesheet.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/css/fonts/icomoon/style.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/css/mws-style.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/css/icons/icol16.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/css/icons/icol32.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/css/demo.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/jui/css/jquery.ui.all.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/jui/jquery-ui.custom.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/css/mws-theme.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/css/themer.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %title Receipt History
+  %body
+    #mws-header.clearfix
+      #mws-logo-container
+        #mws-logo-wrap
+          %img{:alt => "mws admin", :src => "/assets/images/mws-logo.png"}/
+      #mws-user-tools.clearfix
+        #mws-user-info.mws-inset
+          #mws-user-photo
+            %img{:alt => "User Photo", :src => "/assets/example/profile.jpg"}/
+          #mws-user-functions
+            #mws-username
+              Hello,
+              = current_user.name
+            %ul
+              %li
+                %a{:href => "#"} Profile
+              %li
+                = link_to destroy_user_session_path, :class => '', :method => :delete do
+                  Logout
+    / Start Main Wrapper
+    #mws-wrapper
+      / Necessary markup, do not remove
+      #mws-sidebar-stitch
+      #mws-sidebar-bg
+      / Sidebar Wrapper
+      #mws-sidebar
+        / Hidden Nav Collapse Button
+        #mws-nav-collapse
+          %span
+          %span
+          %span
+        / Searchbox
+        -##mws-searchbox.mws-inset
+          %form{:action => "typography.html"}
+            %input.mws-search-input{:placeholder => "Search...", :type => "text"}/
+            %button.mws-search-submit{:type => "submit"}
+              %i.icon-search
+        / Main Navigation
+        #mws-navigation
+          %ul
+            %li.active
+              %a{:href => "dashboard.html"}
+                %i.icon-home
+                Dashboard
+            %li
+              %a{:href => "charts.html"}
+                %i.icon-graph
+                Items
+            %li
+              %a{:href => "calendar.html"}
+                %i.icon-calendar
+                Users
+      / Main Container Start
+      #mws-container.clearfix
+        / Inner Container Start
+        .container
+          / Statistics Button Container
+          .mws-stat-container.clearfix
+            / Statistic Item
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-building
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Items
+                %span.mws-stat-value 324
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-sport
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Items Sold
+                %span.mws-stat-value.down 74%
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-walk
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Money Spend
+                %span.mws-stat-value 14
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-bug
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Money Maded
+                %span.mws-stat-value.up 22%
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-car
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Profit
+                %span.mws-stat-value 77
+          .mws-panel.grid_12
+            = yield
+
+        #mws-footer
+          Copyright Receipt History 2014. All Rights Reserved.
+    %script{:src => "/assets/js/libs/jquery-1.8.3.min.js"}
+    %script{:src => "/assets/js/libs/jquery.mousewheel.min.js"}
+    %script{:src => "/assets/js/libs/jquery.placeholder.min.js"}
+    %script{:src => "/assets/custom-plugins/fileinput.js"}
+    %script{:src => "/assets/jui/js/jquery-ui-1.9.2.min.js"}
+    %script{:src => "/assets/jui/jquery-ui.custom.min.js"}
+    %script{:src => "/assets/jui/js/jquery.ui.touch-punch.js"}
+    %script{:src => "/assets/plugins/datatables/jquery.dataTables.min.js"}
+    /[if lt IE 9]
+      <script src="/assets/js/libs/excanvas.min.js"></script>
+    %script{:src => "/assets/plugins/flot/jquery.flot.min.js"}
+    %script{:src => "/assets/plugins/flot/plugins/jquery.flot.tooltip.min.js"}
+    %script{:src => "/assets/plugins/flot/plugins/jquery.flot.pie.min.js"}
+    %script{:src => "/assets/plugins/flot/plugins/jquery.flot.stack.min.js"}
+    %script{:src => "/assets/plugins/flot/plugins/jquery.flot.resize.min.js"}
+    %script{:src => "/assets/plugins/colorpicker/colorpicker-min.js"}
+    %script{:src => "/assets/plugins/validate/jquery.validate-min.js"}
+    %script{:src => "/assets/custom-plugins/wizard/wizard.min.js"}
+    %script{:src => "/assets/bootstrap/js/bootstrap.min.js"}
+    %script{:src => "/assets/js/core/mws.js"}
+    %script{:src => "/assets/js/core/themer.js"}
+    %script{:src => "/assets/js/demo/demo.dashboard.js"}

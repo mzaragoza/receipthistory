@@ -1,0 +1,14 @@
+#mws-login
+  %h1 Login
+  .mws-login-lock
+    %i.icon-lock
+  #mws-login-form
+    = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+      .mws-form-row
+        .mws-form-item
+          = f.input :email, label: false, input_html: { class: 'mws-login-username required', placeholder: "Enter email", type: "email" }
+      .mws-form-row
+        .mws-form-item
+          = f.input :password, label: false, input_html: { class: 'mws-login-password required', placeholder: "Password", type: "password" }
+      .mws-form-row
+        = f.button :submit, "Login", :class => 'btn btn-success mws-login-button'
