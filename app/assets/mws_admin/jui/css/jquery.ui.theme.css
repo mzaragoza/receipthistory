@@ -15,8 +15,6 @@
 /* Component containers
 ----------------------------------*/
 .ui-widget {
-    /*font-family: Verdana,Arial,sans-serif/*{ffDefault}*/;*/
-    /*font-size: 1.1em/*{fsDefault}*/;*/
 }
 
 .ui-widget .ui-widget {
@@ -24,7 +22,6 @@
 }
 
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
-    /*font-family: Verdana,Arial,sans-serif/*{ffDefault}*/;*/
     /*font-size: 1em;*/
 }
 
