@@ -1,0 +1,38 @@
+.mws-panel.grid_8
+  .mws-panel-header
+    %span
+      %i.pull-right
+        = link_to 'Add', new_users_item_path
+      %i.icon-table
+      Items
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th name
+          %th ammount_purchased
+          %th ammount_sold
+          %th shipping_cost
+          %th profit
+          %th purchased_date
+          %th purchased_store
+          %th link_to_ebay
+          %th link_to_amazon
+          %th sold_site
+          %th returned
+          %th 
+      %tbody
+        - items.each do |i|
+          %tr
+            %td= i.name
+            %td= i.ammount_purchased
+            %td= i.ammount_sold
+            %td= i.shipping_cost
+            %td= i.profit
+            %td= i.purchased_date
+            %td= i.purchased_store
+            %td= i.link_to_ebay
+            %td= i.link_to_amazon
+            %td= i.sold_site
+            %td= i.returned
+            %td 

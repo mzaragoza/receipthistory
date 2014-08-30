@@ -9,6 +9,7 @@ Receipthistory::Application.routes.draw do
   authenticate :user do
     namespace :users do
       resources :profile
+      resources :items
       root 'dashboard#index'
     end
   end

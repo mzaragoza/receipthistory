@@ -61,16 +61,17 @@
               %i.icon-search
         / Main Navigation
         #mws-navigation
+          = params
           %ul
-            %li.active
+            %li{ class: "#{'active' if params[:controller] == 'users/dashboard'}" }
               %a{:href => "dashboard.html"}
                 %i.icon-home
                 Dashboard
-            %li
-              %a{:href => "charts.html"}
+            %li{ class: "#{'active' if params[:controller] == 'users/items'}" }
+              = link_to users_items_path do 
                 %i.icon-graph
                 Items
-            %li
+            %li{ class: "#{'active' if params[:controller] == 'users/users'}" }
               %a{:href => "calendar.html"}
                 %i.icon-calendar
                 Users
@@ -128,7 +129,7 @@
     %script{:src => "/assets/jui/js/jquery-ui-1.9.2.min.js"}
     %script{:src => "/assets/jui/jquery-ui.custom.min.js"}
     %script{:src => "/assets/jui/js/jquery.ui.touch-punch.js"}
-    %script{:src => "/assets/plugins/datatables/jquery.dataTables.min.js"}
+    %script{:src => "/assets/plugins/datatables/jquery.dataTables.js"}
     /[if lt IE 9]
       <script src="/assets/js/libs/excanvas.min.js"></script>
     %script{:src => "/assets/plugins/flot/jquery.flot.min.js"}
@@ -142,4 +143,4 @@
     %script{:src => "/assets/bootstrap/js/bootstrap.min.js"}
     %script{:src => "/assets/js/core/mws.js"}
     %script{:src => "/assets/js/core/themer.js"}
-    %script{:src => "/assets/js/demo/demo.dashboard.js"}
+    %script{:src => "/assets/js/demo/demo.table.js"}

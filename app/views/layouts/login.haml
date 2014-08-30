@@ -15,6 +15,10 @@
     %link{:href => "/assets/css/mws-theme.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     %title MWS Admin - Login Page
   %body
+    #mws-header.clearfix
+      #mws-logo-container
+        #mws-logo-wrap
+          %img{:alt => "mws admin", :src => "/assets/images/mws-logo.png"}/
     #mws-login-wrapper
       = yield
       -#mws-login

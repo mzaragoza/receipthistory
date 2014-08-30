@@ -1,0 +1,14 @@
+= simple_form_for([:users, item], html: {class: 'clearfix', novalidate: true}) do |f|
+  = f.input :name                  , label: false, input_html: { class: 'form-control input-lg', placeholder: "Name"                       }
+  = f.input :ammount_purchased     , label: false, input_html: { class: 'form-control input-lg', placeholder: "Ammount Purchased"          }
+  = f.input :ammount_sold          , label: false, input_html: { class: 'form-control input-lg', placeholder: "Ammount Sold"               }
+  = f.input :shipping_cost         , label: false, input_html: { class: 'form-control input-lg', placeholder: "Shipping Cost"              }
+  = f.input :purchased_date        , label: false, start_year: Date.today.year - 1, end_year: Date.today.year , order: [:month, :day, :year] , include_blank: true, input_html: { class: 'form-control input-lg', placeholder: "Purchased Date"             }
+  = f.input :purchased_store       , label: false, input_html: { class: 'form-control input-lg', placeholder: "Purchased Store"            }
+  = f.input :link_to_ebay          , label: false, input_html: { class: 'form-control input-lg', placeholder: "Link to ebay"               }
+  = f.input :link_to_amazon        , label: false, input_html: { class: 'form-control input-lg', placeholder: "Link to amazon"             }
+  = f.input :sold_site             , label: false, input_html: { class: 'form-control input-lg', placeholder: "Sold Site"                  }
+  Returned
+  = f.input :returned              , label: false, input_html: { class: 'form-control input-lg', placeholder: "Returned"                   }
+  = f.button :submit, class: 'btn btn-primary btn-large pull-right', disable_with: 'Creating...'
+
