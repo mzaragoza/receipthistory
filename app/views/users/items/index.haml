@@ -9,6 +9,7 @@
     %table.mws-datatable-fn.mws-table
       %thead
         %tr
+          %th id
           %th name
           %th ammount_purchased
           %th ammount_sold
@@ -24,6 +25,7 @@
       %tbody
         - items.each do |i|
           %tr
+            %td= i.id
             %td= i.name
             %td= i.ammount_purchased
             %td= i.ammount_sold
