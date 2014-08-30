@@ -33,8 +33,10 @@
             %td= i.profit
             %td= i.purchased_date
             %td= i.purchased_store
-            %td= i.link_to_ebay
-            %td= i.link_to_amazon
+            %td
+              = link_to 'ebay', i.link_to_ebay, terget: '_blank', class: 'btn btn-small btn-info' unless i.link_to_ebay.empty?
+            %td
+              = link_to 'Amazon', i.link_to_amazon, terget: '_blank', class: 'btn btn-small btn-info' unless i.link_to_amazon.empty?
             %td= i.sold_site
             %td= i.returned
-            %td= link_to 'Edit', edit_users_item_path(i)
+            %td= link_to 'Edit', edit_users_item_path(i), class: 'btn btn-small btn-info'

@@ -64,7 +64,7 @@
           = params
           %ul
             %li{ class: "#{'active' if params[:controller] == 'users/dashboard'}" }
-              %a{:href => "dashboard.html"}
+              = link_to users_items_path do 
                 %i.icon-home
                 Dashboard
             %li{ class: "#{'active' if params[:controller] == 'users/items'}" }
