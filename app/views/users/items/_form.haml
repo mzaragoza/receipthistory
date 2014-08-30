@@ -3,7 +3,7 @@
   = f.input :ammount_purchased     , label: false, input_html: { class: 'form-control input-lg', placeholder: "Ammount Purchased"          }
   = f.input :ammount_sold          , label: false, input_html: { class: 'form-control input-lg', placeholder: "Ammount Sold"               }
   = f.input :shipping_cost         , label: false, input_html: { class: 'form-control input-lg', placeholder: "Shipping Cost"              }
-  = f.input :purchased_date        , label: false, start_year: Date.today.year - 1, end_year: Date.today.year , order: [:month, :day, :year] , include_blank: true, input_html: { class: 'form-control input-lg', placeholder: "Purchased Date"             }
+  = f.input :purchased_date        , label: 'Purchased Date', start_year: Date.today.year - 1, end_year: Date.today.year , order: [:month, :day, :year] , include_blank: true, input_html: { class: 'form-control input-lg', placeholder: "Purchased Date"             }
   = f.input :purchased_store       , label: false, input_html: { class: 'form-control input-lg', placeholder: "Purchased Store"            }
   = f.input :link_to_ebay          , label: false, input_html: { class: 'form-control input-lg', placeholder: "Link to ebay"               }
   = f.input :link_to_amazon        , label: false, input_html: { class: 'form-control input-lg', placeholder: "Link to amazon"             }

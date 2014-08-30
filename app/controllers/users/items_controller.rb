@@ -2,6 +2,11 @@ class Users::ItemsController < UserController
   expose(:items){ Item.order("id DESC").scoped{} }
   expose(:item , attributes: :item_params)
 
+  def new
+    item.ammount_purchased = 0
+    item.ammount_sold = 0
+    item.shipping_cost = 0
+  end
   def create
     if item.save
       flash[:notice] = t(:item_was_successfully_created)
