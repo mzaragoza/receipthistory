@@ -88,35 +88,35 @@
               / Statistic Content
               %span.mws-stat-content
                 %span.mws-stat-title Items
-                %span.mws-stat-value 324
+                %span.mws-stat-value= Item.all.count
             %a.mws-stat{:href => "#"}
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-sport
               / Statistic Content
               %span.mws-stat-content
                 %span.mws-stat-title Items Sold
-                %span.mws-stat-value.down 74%
+                %span.mws-stat-value= Item.where("sold_site != ''").count
             %a.mws-stat{:href => "#"}
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-walk
               / Statistic Content
               %span.mws-stat-content
-                %span.mws-stat-title Money Spend
-                %span.mws-stat-value 14
+                %span.mws-stat-title Money Spent
+                %span.mws-stat-value= number_to_currency(Item.sum(:ammount_purchased) + Item.sum(:shipping_cost))
             %a.mws-stat{:href => "#"}
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-bug
               / Statistic Content
               %span.mws-stat-content
-                %span.mws-stat-title Money Maded
-                %span.mws-stat-value.up 22%
+                %span.mws-stat-title Money Made
+                %span.mws-stat-value= number_to_currency(Item.sum(:ammount_sold))
             %a.mws-stat{:href => "#"}
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-car
               / Statistic Content
               %span.mws-stat-content
                 %span.mws-stat-title Profit
-                %span.mws-stat-value 77
+                %span.mws-stat-value= number_to_currency( Item.sum(:ammount_sold) - (Item.sum(:ammount_purchased) + Item.sum(:shipping_cost)) ) 
           .mws-panel.grid_12
             = yield
 
