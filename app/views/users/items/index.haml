@@ -6,7 +6,7 @@
       %i.icon-table
       Items
   .mws-panel-body.no-padding
-    %table.mws-datatable-fn.mws-table
+    %table{id: 'items_table', class: 'mws-table mws-datatable-fn'}
       %thead
         %tr
           %th id
@@ -34,9 +34,10 @@
             %td= i.purchased_date
             %td= i.purchased_store
             %td
-              = link_to 'ebay', i.link_to_ebay, terget: '_blank', class: 'btn btn-small btn-info' unless i.link_to_ebay.empty?
+              = link_to 'ebay', i.link_to_ebay, target: '_blank', class: 'btn btn-small btn-info' unless i.link_to_ebay.empty?
             %td
-              = link_to 'Amazon', i.link_to_amazon, terget: '_blank', class: 'btn btn-small btn-info' unless i.link_to_amazon.empty?
+              = link_to 'Amazon', i.link_to_amazon, target: '_blank', class: 'btn btn-small btn-info' unless i.link_to_amazon.empty?
             %td= i.sold_site
             %td= i.returned
             %td= link_to 'Edit', edit_users_item_path(i), class: 'btn btn-small btn-info'
+
