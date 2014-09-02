@@ -1,5 +1,6 @@
 class Users::UsersController < UserController
-  expose(:users){ Users.order("username ASC").scoped{} }
+  before_filter :check_password_submitted, :only => :update
+  expose(:users){ User.order("id DESC").scoped{} }
   expose(:user, attributes: :user_params)
 
   def create
@@ -31,20 +32,11 @@ class Users::UsersController < UserController
 
   def user_params
     params.require(:user).permit(
-      :username,
       :email,
-      :encrypted_password,
+      :password,
       :first_name,
       :last_name,
-      :gender,
-      :address,
-      :city,
-      :state,
-      :zip,
-      :recovery_type,
-      :phone,
-      :photo,
-      :agree_newsletter,
+      :active,
     )
   end
 end

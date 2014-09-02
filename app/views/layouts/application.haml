@@ -72,7 +72,7 @@
                 %i.icon-graph
                 Items
             %li{ class: "#{'active' if params[:controller] == 'users/users'}" }
-              %a{:href => "calendar.html"}
+              = link_to users_users_path do 
                 %i.icon-calendar
                 Users
       / Main Container Start
@@ -102,7 +102,7 @@
               / Statistic Content
               %span.mws-stat-content
                 %span.mws-stat-title Money Spent
-                %span.mws-stat-value= number_to_currency(Item.sum(:ammount_purchased) + Item.sum(:shipping_cost))
+                %span.mws-stat-value= number_to_currency(Item.where(:returned => false).sum(:ammount_purchased) + Item.where(:returned => false).sum(:shipping_cost))
             %a.mws-stat{:href => "#"}
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-bug

@@ -1,0 +1,8 @@
+= simple_form_for([:users, user], html: {class: 'clearfix', novalidate: true}) do |f|
+  = f.input :first_name     , label: false, input_html: { class: 'form-control input-lg', placeholder: "Firt Name"     }
+  = f.input :last_name      , label: false, input_html: { class: 'form-control input-lg', placeholder: "Last Name"     }
+  = f.input :email          , label: false, input_html: { class: 'form-control input-lg', placeholder: "Email"         }
+  = f.input :password       , label: false, input_html: { class: 'form-control input-lg', placeholder: "Password"      }
+  = f.input :active         , label: false, input_html: { class: 'form-control input-lg', placeholder: "Active"        }
+  = f.button :submit, class: 'btn btn-primary btn-large pull-right', disable_with: 'Creating...'
+

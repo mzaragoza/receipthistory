@@ -1,0 +1,26 @@
+.mws-panel.grid_8
+  .mws-panel-header
+    %span
+      %i.pull-right
+        = link_to 'Add', new_users_user_path
+      %i.icon-table
+      Users
+  .mws-panel-body.no-padding
+    %table{id: 'items_table', class: 'mws-table mws-datatable-fn'}
+      %thead
+        %tr
+          %th id
+          %th name
+          %th email
+          %th active
+          %th 
+      %tbody
+        - users.each do |u|
+          %tr
+            %td= u.id
+            %td= u.name
+            %td= u.email
+            %td= u.active
+            %td= link_to 'Edit', edit_users_user_path(u), class: 'btn btn-small btn-info'
+
+
