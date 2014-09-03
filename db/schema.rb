@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821204149) do
+ActiveRecord::Schema.define(version: 20140903032501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "store_id"
+    t.boolean  "owner",      default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "items", force: true do |t|
     t.string   "name",              default: "",    null: false
@@ -27,6 +35,13 @@ ActiveRecord::Schema.define(version: 20140821204149) do
     t.string   "link_to_amazon",    default: "",    null: false
     t.string   "sold_site",         default: "",    null: false
     t.boolean  "returned",          default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stores", force: true do |t|
+    t.string   "name",       default: ""
+    t.boolean  "active",     default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
