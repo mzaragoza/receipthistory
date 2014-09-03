@@ -71,6 +71,10 @@
               = link_to users_items_path do 
                 %i.icon-graph
                 Items
+            %li{ class: "#{'active' if params[:controller] == 'users/stores'}" }
+              = link_to users_stores_path do 
+                %i.icon-graph
+                Store
             %li{ class: "#{'active' if params[:controller] == 'users/users'}" }
               = link_to users_users_path do 
                 %i.icon-calendar

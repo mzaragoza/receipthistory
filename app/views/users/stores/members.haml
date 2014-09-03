@@ -1,0 +1,25 @@
+.mws-panel.grid_8
+  .mws-panel-header
+    %span
+      -#%i.pull-right
+        = link_to 'Add', new_users_user_path
+      %i.icon-table
+      Users
+  .mws-panel-body.no-padding
+    %table{id: 'items_table', class: 'mws-table mws-datatable-fn'}
+      %thead
+        %tr
+          %th name
+          %th email
+          %th active
+          %th 
+      %tbody
+        - store.users.each do |u|
+          %tr
+            %td= u.name
+            %td= u.email
+            %td= u.active
+            %td
+              - unless store.accounts.where(:user_id => u.id).last.owner
+                = link_to 'Remove', users_store_members_remove_path(store,u.id), class: 'btn btn-small btn-info'
+

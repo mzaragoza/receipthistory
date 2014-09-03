@@ -1,0 +1,26 @@
+.mws-panel.grid_8
+  .mws-panel-header
+    %span
+      %i.pull-right
+        = link_to 'Add', new_users_store_path
+      %i.icon-table
+      Store
+  .mws-panel-body.no-padding
+    %table{id: 'items_table', class: 'mws-table mws-datatable-fn'}
+      %thead
+        %tr
+          %th id
+          %th name
+          %th members
+          %th 
+          %th 
+      %tbody
+        - stores.each do |s|
+          %tr
+            %td= s.id
+            %td= s.name
+            %td= s.users.count
+            %td= link_to 'Members', users_store_members_path(s), class: 'btn btn-small btn-info'
+            %td= link_to 'Edit', edit_users_store_path(s), class: 'btn btn-small btn-info'
+
+
