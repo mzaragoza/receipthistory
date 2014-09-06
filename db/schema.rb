@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140903032501) do
+ActiveRecord::Schema.define(version: 20140906023255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,18 +25,20 @@ ActiveRecord::Schema.define(version: 20140903032501) do
   end
 
   create_table "items", force: true do |t|
-    t.string   "name",              default: "",    null: false
-    t.decimal  "ammount_purchased",                 null: false
-    t.decimal  "ammount_sold",                      null: false
-    t.decimal  "shipping_cost",                     null: false
+    t.string   "name",               default: "",    null: false
+    t.decimal  "ammount_purchased",                  null: false
+    t.decimal  "ammount_sold",                       null: false
+    t.decimal  "shipping_cost",                      null: false
     t.date     "purchased_date"
-    t.string   "purchased_store",   default: "",    null: false
-    t.string   "link_to_ebay",      default: "",    null: false
-    t.string   "link_to_amazon",    default: "",    null: false
-    t.string   "sold_site",         default: "",    null: false
-    t.boolean  "returned",          default: false, null: false
+    t.string   "purchased_store",    default: "",    null: false
+    t.string   "link_to_ebay",       default: "",    null: false
+    t.string   "link_to_amazon",     default: "",    null: false
+    t.string   "sold_site",          default: "",    null: false
+    t.boolean  "returned",           default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "site_selling_fee"
+    t.decimal  "paypal_selling_fee"
   end
 
   create_table "stores", force: true do |t|
