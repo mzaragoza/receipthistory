@@ -60,16 +60,18 @@ class Users::ItemsController < UserController
 
   def item_params
     params.require(:item).permit(
-      :name ,
       :ammount_purchased ,
       :ammount_sold ,
-      :shipping_cost ,
+      :link_to_amazon ,
+      :link_to_ebay ,
+      :name ,
+      :paypal_selling_fee ,
       :purchased_date ,
       :purchased_store ,
-      :link_to_ebay ,
-      :link_to_amazon ,
-      :sold_site ,
       :returned ,
+      :shipping_cost ,
+      :site_selling_fee ,
+      :sold_site ,
     )
   end
 end
