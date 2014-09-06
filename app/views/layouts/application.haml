@@ -120,7 +120,7 @@
               / Statistic Content
               %span.mws-stat-content
                 %span.mws-stat-title Profit
-                %span.mws-stat-value= number_to_currency( Item.sum(:ammount_sold) - (Item.sum(:ammount_purchased) + Item.sum(:shipping_cost)) ) 
+                %span.mws-stat-value= number_to_currency( Item.sum(:ammount_sold) - (Item.sum(:ammount_purchased) + Item.sum(:shipping_cost) + Item.sum(:site_selling_fee) + Item.sum(:paypal_selling_fee) )
           .mws-panel.grid_12
             = yield
 
