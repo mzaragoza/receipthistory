@@ -6,9 +6,26 @@ class Users::ItemsController < UserController
     item.ammount_purchased = 0
     item.ammount_sold = 0
     item.shipping_cost = 0
+    item.paypal_selling_fee = 0
+    item.paypal_selling_fee = 0
     item.purchased_date = Date.today
   end
   def create
+    if item.ammount_purchased == nil
+      item.ammount_purchased = 0
+    end
+    if item.ammount_sold == nil
+      item.ammount_sold = 0
+    end
+    if item.shipping_cost == nil
+      item.shipping_cost = 0
+    end
+    if item.paypal_selling_fee == nil
+      item.paypal_selling_fee = 0
+    end
+    if item.paypal_selling_fee == nil
+      item.paypal_selling_fee = 0
+    end
     if item.save
       flash[:notice] = t(:item_was_successfully_created)
       redirect_to users_items_path
@@ -17,6 +34,21 @@ class Users::ItemsController < UserController
     end
   end
   def update
+    if item.ammount_purchased == nil
+      item.ammount_purchased = 0
+    end
+    if item.ammount_sold == nil
+      item.ammount_sold = 0
+    end
+    if item.shipping_cost == nil
+      item.shipping_cost = 0
+    end
+    if item.paypal_selling_fee == nil
+      item.paypal_selling_fee = 0
+    end
+    if item.paypal_selling_fee == nil
+      item.paypal_selling_fee = 0
+    end
     if item.save
       flash[:notice] = t(:item_was_successfully_updated)
       redirect_to users_items_path

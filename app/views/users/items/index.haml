@@ -14,6 +14,8 @@
           %th ammount_purchased
           %th ammount_sold
           %th shipping_cost
+          %th site_selling_fee
+          %th paypal_selling_fee
           %th profit
           %th purchased_date
           %th purchased_store
@@ -30,6 +32,8 @@
             %td= number_to_currency(i.ammount_purchased)
             %td= number_to_currency(i.ammount_sold)
             %td= number_to_currency(i.shipping_cost)
+            %td= number_to_currency(i.paypal_selling_fee)
+            %td= number_to_currency(i.paypal_selling_fee)
             %td= number_to_currency(i.profit)
             %td= i.purchased_date
             %td= i.purchased_store
