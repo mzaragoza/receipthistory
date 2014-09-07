@@ -6,7 +6,7 @@ class Users::ItemsController < UserController
     item.ammount_purchased = 0
     item.ammount_sold = 0
     item.shipping_cost = 0
-    item.paypal_selling_fee = 0
+    item.site_selling_fee = 0
     item.paypal_selling_fee = 0
     item.purchased_date = Date.today
   end
